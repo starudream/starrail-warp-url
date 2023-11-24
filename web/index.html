@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>StarRail</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div class="bg-white shadow p-4 py-8">
+    <div class="text-center font-bold text-2xl m-5 text-gray-800 bg-white">StarRail Warp URL</div>
+    <div class="mx-auto w-10/12 flex flex-col text-gray-800 border border-gray-300 p-4 shadow-lg max-w-2xl">
+        <textarea id="data" class="bg-gray-100 sec p-3 h-60 border border-gray-300 outline-none"></textarea>
+        <div class="flex justify-end mt-4">
+            <div id="copy" data-clipboard-target="#data" class="btn border border-indigo-500 p-1 px-4 font-semibold cursor-pointer text-gray-200 ml-2 bg-indigo-500">COPY</div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="clipboard.min.js"></script>
+<script type="text/javascript">
+    const DATA = "{{ .data }}"
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelector("#data").value = DATA
+    })
+    const clipboard = new ClipboardJS("#copy")
+    clipboard.on("success", function () {
+        alert("Copied!")
+    })
+</script>
+</body>
+</html>

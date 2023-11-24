@@ -1,0 +1,14 @@
+# IntelliJ project files
+/.idea
+/*.iml
+
+# Compiled files
+/bin
+/dist
+/log
+/cover
+*.exe
+*.log
+
+# Dev files
+starrail-warp-url*.yaml
