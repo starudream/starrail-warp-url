@@ -30,3 +30,8 @@ watch-web:
 .PHONY: build-web
 build-web:
 	tailwindcss -i ./web/_index.css -o ./web/index.css -m
+
+.PHONY: build-web
+build-winres:
+	@CGO_ENABLED=0 go install github.com/tc-hib/go-winres@latest
+	go-winres make --out cmd/rsrc --file-version git-tag --product-version git-tag
